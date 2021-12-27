@@ -1,0 +1,37 @@
+<html>
+  <body>
+    <select id="sel" onload="createDrop()"></select>
+  </body>
+  <script>
+    function createDrop() {
+  
+    var values = ["dog", "cat", "parrot", "rabbit"];
+    for (const val of values){
+        var option = document.createElement("option");
+        option.value = val;
+        option.text = val.charAt(0).toUpperCase() + val.slice(1);
+        select.appendChild(option);
+      }
+    }
+  </script>
+</html>
+
+<table>
+  <tbody>
+    <tr>
+      <input placeholder="bankCode" value="my_mayb" id="bankCode">
+    </tr>
+    <tr>
+      <input placeholder="Amount" value="10" id="amount">
+    </tr>
+    <tr>
+      <input placeholder="Payee Code" value="MALTEST1" id="accNum">
+    </tr>
+    <tr>
+      <input placeholder="Reference Number" id="paymentRef">
+    </tr>
+  </tbody>
+</table>
+<button onclick="getbankCode()" type="button" class="btn btn-primary">
+  <a target="_blank" id='link'>Test</a>
+</button>
