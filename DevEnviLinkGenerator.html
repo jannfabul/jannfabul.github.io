@@ -98,6 +98,7 @@
           </div>
         </tr>
         <tr>
+          <br>
           <a target="_blank" href="https://docs.google.com/document/d/15S3gn0Azby6m-7r6a29j_JMtb988qG7S/">Visit this link for more info about link generation.</a>
         </tr>
       </tbody>
@@ -157,14 +158,6 @@
       var link = document.getElementById(bankLink)
       link.setAttribute('href', linkToGo)
       link.click()
-    }
-    banks = ["my_mayb","my_amb","my_public","my_acb"]
-    function createDrop(bankList){
-      var dropdown = document.getElementById(bankList);
-      var opt = document.createElement("option"); 
-      opt.text = 'something';
-      opt.value = 'somethings value';
-      dropdown.options.add(opt);
     }
   </script>
 </html>
