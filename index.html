@@ -169,9 +169,7 @@
       link.click();
     }
     function getRandomString(refId){
-      var ref = chance.string({ length: 15, alpha: true, numeric: true });
-      var referenceNum = document.getElementById(refId)
-      referenceNum.setAttribute('value', ref)
+      document.getElementById(refId).setAttribute('value', chance.string({ length: 15, alpha: true, numeric: true }));
     }
   </script>
 </html>
