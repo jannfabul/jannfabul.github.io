@@ -17,14 +17,8 @@
             </div>
             <div class="col-md-2" id="inrPayeeCode">
             </div>
-            <div class="col-md-3">
-              <label>Reference Number
-                <input placeholder="Reference Number" id="inrPaymentRef">
-                <button onclick="getRandomString('inrPaymentRef')" type="button" class="btn btn-primary">Random String</button>
-              </label>
-            </div>
             <div class="col-md-2">
-              <button onclick="getbankCode('inrBankCode','inrPayeeCode', 'INR', 'inrAmount', 'inrPaymentRef', 'inrlink')" type="button" class="btn btn-primary">
+              <button onclick="getbankCode('inrBankCode','inrPayeeCode', 'INR', 'inrAmount', 'inrlink')" type="button" class="btn btn-primary">
                 Generate Link
                 <a target="_blank" id='inrlink'></a>
               </button>
@@ -42,14 +36,8 @@
             </div>
             <div class="col-md-2" id="myrPayeeCode">
             </div>
-            <div class="col-md-3">
-              <label>Reference Number
-                <input placeholder="Reference Number" id="myrPaymentRef">
-                <button onclick="getRandomString('myrPaymentRef')" type="button" class="btn btn-primary">Random String</button>
-              </label>
-            </div>
             <div class="col-md-2">
-              <button onclick="getbankCode('myrBankCode','myrPayeeCode', 'MYR', 'myrAmount', 'myrPaymentRef', 'myrlink')" type="button" class="btn btn-primary">
+              <button onclick="getbankCode('myrBankCode','myrPayeeCode', 'MYR', 'myrAmount', 'myrlink')" type="button" class="btn btn-primary">
                 Generate Link
                 <a target="_blank" id='myrlink'></a>
               </button>
@@ -67,14 +55,8 @@
             </div>
             <div class="col-md-2" id="thbPayeeCode">
             </div>
-            <div class="col-md-3">
-              <label>Reference Number
-                <input placeholder="Reference Number" id="thbPaymentRef" >
-                <button onclick="getRandomString('thbPaymentRef')" type="button" class="btn btn-primary">Random String</button>
-              </label>
-            </div>
             <div class="col-md-2">
-              <button onclick="getbankCode('thbBankCode','thbPayeeCode', 'THB', 'thbAmount', 'thbPaymentRef', 'thblink')" type="button" class="btn btn-primary">
+              <button onclick="getbankCode('thbBankCode','thbPayeeCode', 'THB', 'thbAmount', 'thblink')" type="button" class="btn btn-primary">
                 Generate Link
                 <a target="_blank" id='thblink'></a>
               </button>
@@ -92,14 +74,8 @@
             </div>
             <div class="col-md-2" id="vndPayeeCode">
             </div>
-            <div class="col-md-3">
-              <label>Reference Number
-                <input placeholder="Reference Number" id="vndPaymentRef">
-                <button onclick="getRandomString('vndPaymentRef')" type="button" class="btn btn-primary">Random String</button>
-              </label>
-            </div>
             <div class="col-md-2">
-              <button onclick="getbankCode('vndBankCode','vndPayeeCode', 'VND', 'vndAmount', 'vndPaymentRef', 'vndlink')" type="button" class="btn btn-primary">
+              <button onclick="getbankCode('vndBankCode','vndPayeeCode', 'VND', 'vndAmount', 'vndlink')" type="button" class="btn btn-primary">
                 Generate Link
                 <a target="_blank" id='vndlink'></a>
               </button>
@@ -157,19 +133,16 @@
       label.htmlFor = Id;
       document.getElementById(Id).appendChild(label).appendChild(select);
     }
-    function getbankCode(Id, Payee, Currency, Amount, PayRef, bankLink) {
+    function getbankCode(Id, Payee, Currency, Amount, bankLink) {
       var bankCode = document.querySelector(`div#${Id} select`).value;
       var amount = document.getElementById(Amount).value;
       var accNum = document.querySelector(`div#${Payee} select`).value;
-      var paymentRef = document.getElementById(PayRef).value;
+      var paymentRef = chance.string({ length: 15, alpha: true, numeric: true });
       linkToGo = "https://puppeteer.dev.carpentum.tech/start/"+bankCode+"?amount="+amount+"&merchantCode=mc&currency="+Currency+"&accountNumber="+accNum+"&returnUrl=https://www.google.com&signature=xx&expiryTime=2022-11-22T23:00:00.000Z&payOrderId=ECLP:"+paymentRef+"&paymentReference="+paymentRef
 
       var link = document.getElementById(bankLink);
       link.setAttribute('href', linkToGo);
       link.click();
-    }
-    function getRandomString(refId){
-      document.getElementById(refId).setAttribute('value', chance.string({ length: 15, alpha: true, numeric: true }));
     }
   </script>
 </html>
