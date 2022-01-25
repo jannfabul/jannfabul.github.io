@@ -1,28 +1,118 @@
-function generateDropDownBank(){
-  //INR Bank
-  var inrBanks = ["axis","sbi","icici","idbi","kotbk","pnjb","hdfc"]
-  var inrPayee = ["TEST01", "HDFC01", "KOTAK01"]
-  generateDropDown(inrBanks, "INRBanks", "inrBankCode", "Choose Bank: ")
-  generateDropDown(inrPayee, "INRPayee", "inrPayeeCode", "Choose Payee: ")
-  
-  //MYR Bank
-  var myrBanks = ['my_amb', "my_public", "my_rhb", "my_cimb", "my_hsbc", "my_uobib", "my_mayb", "my_ocbc"]
-  var myrPayee = ["MALTEST1", "MALTEST2", "MALTEST3"]
-  generateDropDown(myrBanks, "MYRBanks", "myrBankCode", "Choose Bank: ")
-  generateDropDown(myrPayee, "MYRPayee", "myrPayeeCode", "Choose Payee: ")
-  
-  //THB Bank
-  var thbBanks = ["th_krungsri", "th_ttbdirect", "th_kasikorn", "th_siam", "th_krungthai", "th_uobt", "th_bangkok", "th_ttbdirect", "th_ttbdirect", "th_governmentsavings"]
-  var thbPayee = ["TEST_BANGKOK", "TEST_TTB", "TEST_GSB"]
-  generateDropDown(thbBanks, "THBBanks", "thbBankCode", "Choose Bank: ")
-  generateDropDown(thbPayee, "THBPayee", "thbPayeeCode", "Choose Payee: ")
-
-  //VND Bank
-  var vndBanks = ["vn_acb", "vn_sacom", "vn_vietcom", "vn_techcom", "vn_vietin", "vn_donga", "vn_bidv", "vn_tp", "vn_vp", "vn_exim"]
-  var vndPayee = ["TEST_VIET_SACOM", "TEST_VIET_ACB", "TEST_VIET_VIETCOM", "TEST_VIET_TECHCOM", "TEST_VIET_DONG"]
-  generateDropDown(vndBanks, "VNDBanks", "vndBankCode", "Choose Bank: ")
-  generateDropDown(vndPayee, "VNDPayee", "vndPayeeCode", "Choose Payee: ")
+banksjson = [
+  {"data":{
+    "bankCountry": "inr",
+     "bank":[
+        "axis",
+        "sbi",
+        "icici",
+        "idbi",
+        "kotbk",
+        "pnjb",
+        "hdfc"
+     ],
+     "payee":[
+        "TEST01",
+        "HDFC01",
+        "KOTAK01"
+     ],
+     "bankCode": "inrBankCode",
+     "payeeCode": "inrPayeeCode"
+  }},
+  {"data":{
+    "bankCountry": "myr",
+     "bank":[
+        "my_amb",
+        "my_public",
+        "my_rhb",
+        "my_cimb",
+        "my_hsbc",
+        "my_uobib",
+        "my_mayb",
+        "my_ocbc"
+     ],
+     "payee":[
+        "MALTEST1",
+        "MALTEST2",
+        "MALTEST3"
+     ],
+     "bankCode": "myrBankCode",
+     "payeeCode": "myrPayeeCode"
+  }},
+  {"data":{
+    "bankCountry": "thb",
+     "bank":[
+        "th_krungsri",
+        "th_ttbdirect",
+        "th_kasikorn",
+        "th_siam",
+        "th_krungthai",
+        "th_uobt",
+        "th_bangkok",
+        "th_ttbdirect",
+        "th_ttbdirect",
+        "th_governmentsavings"
+     ],
+     "payee":[
+        "TEST_BANGKOK",
+        "TEST_TTB",
+        "TEST_GSB"
+     ],
+     "bankCode": "thbBankCode",
+     "payeeCode": "thbPayeeCode"
+  }},
+  {"data":{
+    "bankCountry": "vnd",
+     "bank":[
+        "vn_acb",
+        "vn_sacom",
+        "vn_vietcom",
+        "vn_techcom",
+        "vn_vietin",
+        "vn_donga",
+        "vn_bidv",
+        "vn_tp",
+        "vn_vp",
+        "vn_exim"
+     ],
+     "payee":[
+        "TEST_VIET_SACOM",
+        "TEST_VIET_ACB",
+        "TEST_VIET_VIETCOM",
+        "TEST_VIET_TECHCOM",
+        "TEST_VIET_DONG"
+     ],
+     "bankCode": "vndBankCode",
+     "payeeCode": "vndPayeeCode"
+  }}
+]
+payeeCodeMapping = {
+  "TEST01": "ICICI",
+  "HDFC01": "HDFC",
+  "KOTAK01": "KOTAK - No MMID",
+  "MALTEST3": "Public Bank",
+  "MALTEST2": "AMBank",
+  "MALTEST1": "OCBC",
+  "TEST_TTB": "TTBDirect",
+  "TEST_BANGKOK": "Bangkok Bank",
+  "TEST_GSB": "Government Saving Bank",
+  "TEST_VIET_ACB": "ACB",
+  "TEST_VIET_SACOM": "SACOM",
+  "TEST_VIET_VIETCOM": "VIETCOM",
+  "TEST_VIET_TECHCOM": "TECHCOM",
+  "TEST_VIET_DONG": "DONGA",
+}
+function payeeCodeMapper(payee){
+  result = payee
+  if (Object.keys(payeeCodeMapping).includes(payee)){
+    result = payeeCodeMapping[payee]
   }
+  return result
+}
+function generateDropDownBank(){
+  for (var bankCurrency of banksjson){
+    generateDropDown(bankCurrency.data.bank, bankCurrency.data.bankCountry+"Bank", bankCurrency.data.bankCode, "Choose Bank: ")
+    generateDropDown(bankCurrency.data.payee, bankCurrency.data.bankCountry+"Payee", bankCurrency.data.payeeCode, "Choose Payee: ")}}
+
 function generateDropDown(Val, Type, Id, Text){
   var values = Val;
   var select = document.createElement("select");
@@ -32,7 +122,7 @@ function generateDropDown(Val, Type, Id, Text){
   for (const val of values){
     var option = document.createElement("option");
     option.value = val;
-    option.text = val.charAt(0) + val.slice(1);
+    option.text = payeeCodeMapper(val);
     select.appendChild(option);
   }
   var label = document.createElement("label")
