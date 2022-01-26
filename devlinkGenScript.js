@@ -28,7 +28,8 @@ banksjson = [
         "my_hsbc",
         "my_uobib",
         "my_mayb",
-        "my_ocbc"
+        "my_ocbc",
+        "my_hlb"
      ],
      "payee":[
         "MALTEST1",
