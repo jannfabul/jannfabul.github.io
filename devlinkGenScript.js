@@ -49,8 +49,6 @@ banksjson = [
         "th_krungthai",
         "th_uobt",
         "th_bangkok",
-        "th_ttbdirect",
-        "th_ttbdirect",
         "th_governmentsavings"
      ],
      "payee":[
