@@ -8,7 +8,8 @@ banksjson = [
         "idbi",
         "kotbk",
         "pnjb",
-        "hdfc"
+        "hdfc",
+        "yesb"
      ],
      "payee":[
         "TEST01",
