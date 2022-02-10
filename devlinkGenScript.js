@@ -77,7 +77,6 @@ banksjson = [
      "payee":[
         "TEST_VIET_SACOM",
         "TEST_VIET_ACB",
-        "TEST_VIET_VIETCOM",
         "TEST_VIET_TECHCOM",
         "TEST_VIET_DONG"
      ],
@@ -99,7 +98,6 @@ banksjson = [
         "TEST_GSB",
         "TEST_VIET_SACOM",
         "TEST_VIET_ACB",
-        "TEST_VIET_VIETCOM",
         "TEST_VIET_TECHCOM",
         "TEST_VIET_DONG"
      ],
@@ -119,7 +117,6 @@ payeeCodeMapping = {
   "TEST_GSB": "Government Saving Bank",
   "TEST_VIET_ACB": "ACB",
   "TEST_VIET_SACOM": "SACOM",
-  "TEST_VIET_VIETCOM": "VIETCOM",
   "TEST_VIET_TECHCOM": "TECHCOM",
   "TEST_VIET_DONG": "DONGA",
 }
