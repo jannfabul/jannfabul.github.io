@@ -84,6 +84,20 @@ banksjson = [
      "payeeCode": "vndPayeeCode"
   }},
   {"data":{
+    "bankCountry": "zar",
+     "bank":[
+        "za_standard"
+     ],
+     "payee":[
+        "TEST_CAPITEC",
+		"TEST_STANDARD",
+		"TEST_ABSA",
+		"TEST_FNB"
+     ],
+     "bankCode": "zarBankCode",
+     "payeeCode": "zarPayeeCode"
+  }},
+  {"data":{
     "bankCountry": "mock",
      "bank": ["mock"],
      "payee":[
