@@ -83,6 +83,25 @@
             </div>
           </div>
         </tr>
+		<tr>
+			<h6>ZAR BANKS</h6>
+			<div class="row">
+			  <div class="col-md-2" id="zarBankCode">
+			  </div>
+			  <div class="col-md-2">
+				<label>Amount</label>
+				<input placeholder="Amount" value="100000" id="zarAmount">
+			  </div>
+			  <div class="col-md-3" id="zarPayeeCode">
+			  </div>
+			  <div class="col-md-2">
+				<button onclick="getbankCode('zarBankCode','zarPayeeCode', 'zar', 'zarAmount', 'zarlink')" type="button" class="btn btn-primary">
+				  Generate Link
+				  <a target="_blank" id='zarlink'></a>
+				</button>
+			  </div>
+			</div>
+		  </tr>
         <tr>
           <h6>MOCK</h6>
           <div class="row">
