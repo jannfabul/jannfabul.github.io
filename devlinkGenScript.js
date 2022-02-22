@@ -86,7 +86,11 @@ banksjson = [
   {"data":{
     "bankCountry": "zar",
      "bank":[
-        "za_standard"
+        "za_standard",
+		"za_fnb",
+		"za_absa",
+		"za_absa",
+		"za_capitec"
      ],
      "payee":[
         "TEST_CAPITEC",
