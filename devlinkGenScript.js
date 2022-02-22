@@ -89,7 +89,6 @@ banksjson = [
         "za_standard",
 		"za_fnb",
 		"za_absa",
-		"za_absa",
 		"za_capitec"
      ],
      "payee":[
