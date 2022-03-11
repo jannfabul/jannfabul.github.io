@@ -9,7 +9,8 @@ banksjson = [
         "kotbk",
         "pnjb",
         "hdfc",
-        "yesb"
+        "yesb",
+        "canbk"
      ],
      "payee":[
         "TEST01",
@@ -154,7 +155,7 @@ function generateDropDown(Val, Type, Id, Text){
   var select = document.createElement("select");
   select.name = Type;
   select.id = Type;
-    
+
   for (const val of values){
     var option = document.createElement("option");
     option.value = val;
