@@ -11,7 +11,8 @@ banksjson = [
         "hdfc",
         "yesb",
         "canbk",
-        "brda"
+        "brda",
+        "indu"
      ],
      "payee":[
         "TEST01",
