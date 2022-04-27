@@ -3,16 +3,16 @@ banksjson = [
     "bankCountry": "inr",
      "bank":[
         "axis",
-        "sbi",
+        "brda",
+        "canbk",
+        "hdfc",
         "icici",
         "idbi",
+        "indu",
         "kotbk",
         "pnjb",
-        "hdfc",
-        "yesb",
-        "canbk",
-        "brda",
-        "indu"
+        "sbi",
+        "yesb"
      ],
      "payee":[
         "TEST01",
@@ -26,14 +26,14 @@ banksjson = [
     "bankCountry": "myr",
      "bank":[
         "my_amb",
-        "my_public",
-        "my_rhb",
         "my_cimb",
+        "my_hlb",
         "my_hsbc",
-        "my_uobib",
         "my_mayb",
         "my_ocbc",
-        "my_hlb"
+        "my_public",
+        "my_rhb",
+        "my_uobib"
      ],
      "payee":[
         "MALTEST1",
@@ -46,14 +46,14 @@ banksjson = [
   {"data":{
     "bankCountry": "thb",
      "bank":[
-        "th_krungsri",
-        "th_ttbdirect",
-        "th_kasikorn",
-        "th_siam",
-        "th_krungthai",
-        "th_uobt",
         "th_bangkok",
-        "th_governmentsavings"
+        "th_governmentsavings",
+        "th_kasikorn",
+        "th_krungthai",
+        "th_krungsri",
+        "th_siam",
+        "th_ttbdirect",
+        "th_uobt"
      ],
      "payee":[
         "TEST_BANGKOK",
@@ -67,15 +67,15 @@ banksjson = [
     "bankCountry": "vnd",
      "bank":[
         "vn_acb",
-        "vn_sacom",
-        "vn_vietcom",
-        "vn_techcom",
-        "vn_vietin",
-        "vn_donga",
         "vn_bidv",
+        "vn_donga",
+        "vn_exim",
+        "vn_sacom",
+        "vn_techcom",
         "vn_tp",
-        "vn_vp",
-        "vn_exim"
+        "vn_vietcom",
+        "vn_vietin",
+        "vn_vp"
      ],
      "payee":[
         "TEST_VIET_SACOM",
@@ -89,16 +89,16 @@ banksjson = [
   {"data":{
     "bankCountry": "zar",
      "bank":[
-        "za_standard",
-		"za_fnb",
-		"za_absa",
-		"za_capitec"
+		  "za_absa",
+		  "za_capitec",
+        "za_fnb",
+        "za_standard"
      ],
      "payee":[
         "TEST_CAPITEC",
-		"TEST_STANDARD",
-		"TEST_ABSA",
-		"TEST_FNB"
+		  "TEST_STANDARD",
+		  "TEST_ABSA",
+		  "TEST_FNB"
      ],
      "bankCode": "zarBankCode",
      "payeeCode": "zarPayeeCode"
