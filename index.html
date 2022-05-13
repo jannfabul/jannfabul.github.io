@@ -8,6 +8,13 @@
     <table>
       <tbody>
         <tr>
+          <h6>ENVIRONMENT</h6>
+          <div class="row">
+            <div class="col-md-2" id="environmentId">
+            </div>
+          </div>
+        </tr>
+        <tr>
           <h6>INR BANKS</h6>
           <div class="row">
             <div class="col-md-2" id="inrBankCode">
@@ -19,7 +26,7 @@
             <div class="col-md-3" id="inrPayeeCode">
             </div>
             <div class="col-md-2">
-              <button onclick="getbankCode('inrBankCode','inrPayeeCode', 'INR', 'inrAmount', 'inrlink')" type="button" class="btn btn-primary">
+              <button onclick="getbankCode('environmentId','inrBankCode','inrPayeeCode', 'INR', 'inrAmount', 'inrlink')" type="button" class="btn btn-primary">
                 Generate Link
                 <a target="_blank" id='inrlink'></a>
               </button>
@@ -38,7 +45,7 @@
             <div class="col-md-3" id="myrPayeeCode">
             </div>
             <div class="col-md-2">
-              <button onclick="getbankCode('myrBankCode','myrPayeeCode', 'MYR', 'myrAmount', 'myrlink')" type="button" class="btn btn-primary">
+              <button onclick="getbankCode('environmentId','myrBankCode','myrPayeeCode', 'MYR', 'myrAmount', 'myrlink')" type="button" class="btn btn-primary">
                 Generate Link
                 <a target="_blank" id='myrlink'></a>
               </button>
@@ -57,7 +64,7 @@
             <div class="col-md-3" id="thbPayeeCode">
             </div>
             <div class="col-md-2">
-              <button onclick="getbankCode('thbBankCode','thbPayeeCode', 'THB', 'thbAmount', 'thblink')" type="button" class="btn btn-primary">
+              <button onclick="getbankCode('environmentId','thbBankCode','thbPayeeCode', 'THB', 'thbAmount', 'thblink')" type="button" class="btn btn-primary">
                 Generate Link
                 <a target="_blank" id='thblink'></a>
               </button>
@@ -76,7 +83,7 @@
             <div class="col-md-3" id="vndPayeeCode">
             </div>
             <div class="col-md-2">
-              <button onclick="getbankCode('vndBankCode','vndPayeeCode', 'VND', 'vndAmount', 'vndlink')" type="button" class="btn btn-primary">
+              <button onclick="getbankCode('environmentId','vndBankCode','vndPayeeCode', 'VND', 'vndAmount', 'vndlink')" type="button" class="btn btn-primary">
                 Generate Link
                 <a target="_blank" id='vndlink'></a>
               </button>
@@ -95,7 +102,7 @@
 			  <div class="col-md-3" id="zarPayeeCode">
 			  </div>
 			  <div class="col-md-2">
-				<button onclick="getbankCode('zarBankCode','zarPayeeCode', 'zar', 'zarAmount', 'zarlink')" type="button" class="btn btn-primary">
+				<button onclick="getbankCode('environmentId','zarBankCode','zarPayeeCode', 'zar', 'zarAmount', 'zarlink')" type="button" class="btn btn-primary">
 				  Generate Link
 				  <a target="_blank" id='zarlink'></a>
 				</button>
@@ -114,7 +121,7 @@
             <div class="col-md-3" id="mockPayeeCode">
             </div>
             <div class="col-md-2">
-              <button onclick="getbankCode('mockBankCode','mockPayeeCode', 'mock', 'mockAmount', 'mocklink')" type="button" class="btn btn-primary">
+              <button onclick="getbankCode('environmentId','mockBankCode','mockPayeeCode', 'mock', 'mockAmount', 'mocklink')" type="button" class="btn btn-primary">
                 Generate Link
                 <a target="_blank" id='mocklink'></a>
               </button>

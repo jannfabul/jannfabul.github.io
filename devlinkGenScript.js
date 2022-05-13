@@ -125,6 +125,13 @@ banksjson = [
      "payeeCode": "mockPayeeCode"
   }}
 ]
+testEnvi =
+   {"data":{
+      "testEnvironment":[
+         "https://puppeteer.dev.carpentum.tech",
+         "http://localhost:4566",
+      ]
+   }}
 payeeCodeMapping = {
   "TEST01": "ICICI",
   "HDFC01": "HDFC",
@@ -139,6 +146,8 @@ payeeCodeMapping = {
   "TEST_VIET_SACOM": "SACOM",
   "TEST_VIET_TECHCOM": "TECHCOM",
   "TEST_VIET_DONG": "DONGA",
+  "https://puppeteer.dev.carpentum.tech": "Dev",
+  "http://localhost:4566": "Local",
 }
 function payeeCodeMapper(payee){
   result = payee
@@ -148,10 +157,11 @@ function payeeCodeMapper(payee){
   return result
 }
 function generateDropDownBank(){
+  generateDropDown(testEnvi.data.testEnvironment,'envirnoment','environmentId', "Choose Environment:")
   for (var bankCurrency of banksjson){
     generateDropDown(bankCurrency.data.bank, bankCurrency.data.bankCountry+"Bank", bankCurrency.data.bankCode, "Choose Bank: ")
-    generateDropDown(bankCurrency.data.payee, bankCurrency.data.bankCountry+"Payee", bankCurrency.data.payeeCode, "Choose Payee: ")}}
-
+    generateDropDown(bankCurrency.data.payee, bankCurrency.data.bankCountry+"Payee", bankCurrency.data.payeeCode, "Choose Payee: ")}
+   }
 function generateDropDown(Val, Type, Id, Text){
   var values = Val;
   var select = document.createElement("select");
@@ -169,12 +179,13 @@ function generateDropDown(Val, Type, Id, Text){
   label.htmlFor = Id;
   document.getElementById(Id).appendChild(label).appendChild(select);
 }
-function getbankCode(Id, Payee, Currency, Amount, bankLink) {
+function getbankCode(envi, Id, Payee, Currency, Amount, bankLink) {
+  var environment = document.querySelector(`div#${envi} select`).value;
   var bankCode = document.querySelector(`div#${Id} select`).value;
   var amount = document.getElementById(Amount).value;
   var accNum = document.querySelector(`div#${Payee} select`).value;
   var paymentRef = chance.string({ length: 15, alpha: true, numeric: true });
-  linkToGo = "https://puppeteer.dev.carpentum.tech/start/"+bankCode+"?amount="+amount+"&merchantCode=mc&currency="+Currency+"&accountNumber="+accNum+"&returnUrl=https://www.google.com&signature=xx&expiryTime=2022-11-22T23:00:00.000Z&payOrderId=ECLP:"+paymentRef+"&paymentReference="+paymentRef
+  linkToGo = environment+"/start/"+bankCode+"?amount="+amount+"&merchantCode=mc&currency="+Currency+"&accountNumber="+accNum+"&returnUrl=https://www.google.com&signature=xx&expiryTime=2022-11-22T23:00:00.000Z&payOrderId=ECLP:"+paymentRef+"&paymentReference="+paymentRef
 
   var link = document.getElementById(bankLink);
   link.setAttribute('href', linkToGo);
