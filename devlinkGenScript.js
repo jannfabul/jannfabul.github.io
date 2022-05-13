@@ -163,12 +163,11 @@ function generateDropDownBank(){
     generateDropDown(bankCurrency.data.payee, bankCurrency.data.bankCountry+"Payee", bankCurrency.data.payeeCode, "Choose Payee: ")}
    }
 function generateDropDown(Val, Type, Id, Text){
-  var values = Val;
   var select = document.createElement("select");
   select.name = Type;
   select.id = Type;
 
-  for (const val of values){
+  for (const val of Val){
     var option = document.createElement("option");
     option.value = val;
     option.text = payeeCodeMapper(val);
@@ -179,8 +178,8 @@ function generateDropDown(Val, Type, Id, Text){
   label.htmlFor = Id;
   document.getElementById(Id).appendChild(label).appendChild(select);
 }
-function getbankCode(envi, Id, Payee, Currency, Amount, bankLink) {
-  var environment = document.querySelector(`div#${envi} select`).value;
+function getbankCode(Id, Payee, Currency, Amount, bankLink) {
+  var environment = document.querySelector(`div#environmentId select`).value;
   var bankCode = document.querySelector(`div#${Id} select`).value;
   var amount = document.getElementById(Amount).value;
   var accNum = document.querySelector(`div#${Payee} select`).value;
