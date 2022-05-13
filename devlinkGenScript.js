@@ -129,7 +129,7 @@ testEnvi =
    {"data":{
       "testEnvironment":[
          "https://puppeteer.dev.carpentum.tech",
-         "http://localhost:4566",
+         "http://localhost:3050",
       ]
    }}
 payeeCodeMapping = {
@@ -147,7 +147,7 @@ payeeCodeMapping = {
   "TEST_VIET_TECHCOM": "TECHCOM",
   "TEST_VIET_DONG": "DONGA",
   "https://puppeteer.dev.carpentum.tech": "Dev",
-  "http://localhost:4566": "Local",
+  "http://localhost:3050": "Local(for FE use only)",
 }
 function payeeCodeMapper(payee){
   result = payee
