@@ -190,3 +190,10 @@ function getbankCode(Id, Payee, Currency, Amount, bankLink) {
   link.setAttribute('href', linkToGo);
   link.click();
 }
+function downloadScreenshot(Id,fileName, fileType) {
+   var download = document.getElementById(Id)
+   var valName = document.getElementById(fileName).value
+   var valType = fileType
+   download.setAttribute('href', "http://localhost:4566/carpentum-puppeteer-assets-local/"+valName+valType)
+   download.click()
+ }

@@ -129,6 +129,28 @@
           </div>
         </tr>
         <tr>
+          <h6>Download Screenshot</h6>
+          <p>Downloads mhtml and png on local environment</p>
+          <div class="row">
+            <div class="col-md-4">
+              <label>File Name</label>
+              <input placeholder="e.g. 2022-05-18-06-54-57-859416_None_pagination2" id="fileName" size="50">
+            </div>
+            <div class="col-md-2">
+              <button onclick="downloadScreenshot('downloadMhtml','fileName','.mhtml')" type="button" class="btn btn-primary">
+                Download Mhtml
+                <a id='downloadMhtml'></a>
+              </button>
+            </div>
+            <div class="col-md-2">
+              <button onclick="downloadScreenshot('downloadId','fileName','.png')" type="button" class="btn btn-primary">
+                Download Png
+                <a id='downloadId'></a>
+              </button>
+            </div>
+          </div>
+        </tr>
+        <tr>
           <br>
           <a target="_blank" href="https://docs.google.com/document/d/15S3gn0Azby6m-7r6a29j_JMtb988qG7S/">Visit this link for more info about link generation.</a>
         </tr>
@@ -136,6 +158,15 @@
         <tr>
           <div>
             <image src="tdh_logo.jpg"></image>
+          </div>
+        </tr>
+        <tr>
+          <h6>Download Screenshot</h6>
+          <div class="row">
+            <div class="col-md-2">
+              <label>Amount</label>
+              <input placeholder="Amount" value="100000" id="mockAmount">
+            </div>
           </div>
         </tr>
       </tbody>
