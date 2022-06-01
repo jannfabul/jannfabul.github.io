@@ -146,6 +146,10 @@ payeeCodeMapping = {
   "TEST_VIET_SACOM": "SACOM",
   "TEST_VIET_TECHCOM": "TECHCOM",
   "TEST_VIET_DONG": "DONGA",
+  "TEST_CAPITEC": "CAPITEC",
+  "TEST_STANDARD": "STANDARD",
+  "TEST_ABSA": "ABSA",
+  "TEST_FNB": "FNB",
   "https://puppeteer.dev.carpentum.tech": "Dev",
   "http://localhost:3050": "Local(for FE use only)",
 }
