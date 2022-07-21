@@ -200,10 +200,10 @@ function downloadScreenshot(Id,fileName, fileType) {
    var valType = fileType
 
    if (valType == '.csv'){
-      download.setAttribute('href', "carpentum-statements-local/localTenant/localAccount/inbox/"+valName+valType)
+      download.setAttribute('href', "http://localhost:4566/carpentum-statements-local/localTenant/localAccount/inbox/"+valName+valType)
    }
    else {
-      download.setAttribute('href', "carpentum-puppeteer-assets-local/"+valName+valType)
+      download.setAttribute('href', "http://localhost:4566/carpentum-puppeteer-assets-local/"+valName+valType)
    }
    download.click()
  }
