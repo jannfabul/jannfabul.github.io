@@ -38,7 +38,6 @@ banksjson = [
      "payee":[
         "MALTEST1",
         "MALTEST2",
-        "MALTEST3"
      ],
      "bankCode": "myrBankCode",
      "payeeCode": "myrPayeeCode"
@@ -112,7 +111,6 @@ banksjson = [
         "KOTAK01",
         "MALTEST1",
         "MALTEST2",
-        "MALTEST3",
         "TEST_BANGKOK",
         "TEST_TTB",
         "TEST_GSB",
@@ -136,7 +134,6 @@ payeeCodeMapping = {
   "TEST01": "ICICI",
   "HDFC01": "HDFC",
   "KOTAK01": "KOTAK - No MMID",
-  "MALTEST3": "Public Bank",
   "MALTEST2": "AMBank",
   "MALTEST1": "OCBC",
   "TEST_TTB": "TTBDirect",
