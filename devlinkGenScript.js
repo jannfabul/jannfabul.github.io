@@ -198,6 +198,12 @@ function downloadScreenshot(Id,fileName, fileType) {
    var download = document.getElementById(Id)
    var valName = document.getElementById(fileName).value
    var valType = fileType
-   download.setAttribute('href', "http://localhost:4566/carpentum-puppeteer-assets-local/"+valName+valType)
+
+   if (valType == '.csv'){
+      download.setAttribute('href', "carpentum-statements-local/localTenant/localAccount/inbox/"+valName+valType)
+   }
+   else {
+      download.setAttribute('href', "http://localhost:4566/carpentum-puppeteer-assets-local/"+valName+valType)
+   }
    download.click()
  }
